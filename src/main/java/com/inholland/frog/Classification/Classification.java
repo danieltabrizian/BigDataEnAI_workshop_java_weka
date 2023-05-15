@@ -1,8 +1,13 @@
 package com.inholland.frog.Classification;
 
+import com.inholland.frog.Classification.NaiveBayes.NaiveBayesDemo;
+
 public class Classification {
     public static void main(String[] args) {
-        // Your code here
-        System.out.println("Hello, world!");
+        try{
+            NaiveBayesDemo.process();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }
