@@ -7,12 +7,31 @@
     <groupId>frog</groupId>
     <artifactId>BigDataEnAI_workshop_java_weka</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.librec</groupId>
+            <artifactId>librec-core</artifactId>
+            <version>2.0.0</version>
+        </dependency>
         <dependency>
             <groupId>com.sample</groupId>
             <artifactId>weka</artifactId>
