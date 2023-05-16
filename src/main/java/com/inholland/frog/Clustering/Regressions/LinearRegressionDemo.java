@@ -1,15 +1,16 @@
 package com.inholland.frog.Clustering.Regressions;
 
+import weka.classifiers.functions.LinearRegression;
 import weka.core.Instances;
 import weka.core.converters.ArffLoader;
 
-public class LinearRegression {
+public class LinearRegressionDemo {
     public static final String FILENAME = "/stock.arff";
     public static void performDemo() {
         try {
             // Load the ARFF file
             ArffLoader loader = new ArffLoader();
-            loader.setSource(LinearRegression.class.getResourceAsStream(FILENAME));
+            loader.setSource(LinearRegressionDemo.class.getResourceAsStream(FILENAME));
             Instances dataset = loader.getDataSet();
 
             // Set the class index (assuming the last attribute is the target variable)
@@ -22,7 +23,7 @@ public class LinearRegression {
             Instances testDataset = new Instances(dataset, trainSize, testSize);
 
             // Create and build the linear regression model
-            weka.classifiers.functions.LinearRegression model = new weka.classifiers.functions.LinearRegression();
+            LinearRegression model = new LinearRegression();
             model.buildClassifier(trainDataset);
 
             // Print the coefficients of the linear regression model
