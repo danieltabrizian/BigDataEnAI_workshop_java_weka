@@ -1,5 +1,6 @@
 package com.inholland.frog.Classification.RandomForest;
 
+import com.inholland.frog.Classification.NaiveBayes.NaiveBayesDemo;
 import weka.classifiers.Evaluation;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
@@ -22,27 +23,14 @@ public class RandomForestDemo {
      * @throws Exception
      */
     public static Instances getDataSet(String fileName) throws Exception {
-        /**
-         * we can set the file i.e., loader.setFile("finename") to load the data
-         */
-
-        StringToWordVector filter = new StringToWordVector();
-        int classIdx = 1;
 
         /** the arffloader to load the arff file */
         ArffLoader loader = new ArffLoader();
         /** load the traing data */
-        System.out.println(RandomForestDemo.class.getResourceAsStream("/" + fileName));
 
-        loader.setSource(RandomForestDemo.class.getResourceAsStream("/" + fileName));
+        loader.setSource(NaiveBayesDemo.class.getResourceAsStream("/"+fileName));
 
-        Instances dataSet = loader.getDataSet();
-
-        /** set the index based on the data given in the arff files */
-        dataSet.setClassIndex(classIdx);
-        filter.setInputFormat(dataSet);
-        dataSet = Filter.useFilter(dataSet, filter);
-        return dataSet;
+        return loader.getDataSet();
     }
 
     /**
